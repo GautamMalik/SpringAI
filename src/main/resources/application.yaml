@@ -1,3 +1,18 @@
 spring:
   application:
     name: ai
+  ai:
+    chat:
+      client:
+        enabled: false        # to use multimodels At same time
+    openai:                   # config for openAi - docker model
+      api-key: dummy
+      chat:
+        model: ai/gemma3:270M-UD-Q4_K_XL
+        base-url: http://localhost:12434/engines/v1   # mandatory to pass otherwise default openAi base url will be picked
+
+
+    ollama:         # config for ollama - local
+      chat:
+        options:
+          model: llama3.2:1b
