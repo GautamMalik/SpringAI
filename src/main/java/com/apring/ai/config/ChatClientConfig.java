@@ -18,4 +18,9 @@ public class ChatClientConfig {
     public ChatClient ollamaChatClient(OllamaChatModel ollamaChatModel){
         return ChatClient.builder(ollamaChatModel).build();
     }
+
+    @Bean
+    ChatClient.Builder chatClientBuilder(OllamaChatModel chatModel) {
+        return ChatClient.builder(chatModel);
+    }
 }
