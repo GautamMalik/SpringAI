@@ -26,7 +26,7 @@ public class RolesMessageController {
     }
 
     @GetMapping("/openAi/Role/chat/joke")
-    public String chatollama(@RequestParam("message") String message) {
+    public String chatOpenAi(@RequestParam("message") String message) {
         return chatClient
                 .prompt()
                 .system("You a professional joke teller")
