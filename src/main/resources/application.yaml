@@ -19,6 +19,9 @@ spring:
 
 logging:
   level:
+    org.springframework.ai: DEBUG
+    org.springframework.ai.chat: TRACE
+    org.springframework.ai.ollama: TRACE
     org:
       springframework:
         ai:

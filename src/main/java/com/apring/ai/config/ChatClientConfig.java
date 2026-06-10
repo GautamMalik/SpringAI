@@ -3,7 +3,9 @@ package com.apring.ai.config;
 import org.springframework.ai.chat.client.ChatClient;
 import org.springframework.ai.chat.client.advisor.SimpleLoggerAdvisor;
 import org.springframework.ai.ollama.OllamaChatModel;
+import org.springframework.ai.ollama.api.OllamaChatOptions;
 import org.springframework.ai.openai.OpenAiChatModel;
+import org.springframework.ai.openai.OpenAiChatOptions;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -28,6 +30,17 @@ public class ChatClientConfig {
     @Bean
     public ChatClient openaiChatClientWithAdvisor(OpenAiChatModel openAiChatModel){
         return ChatClient.builder(openAiChatModel)
+                .defaultAdvisors(new SimpleLoggerAdvisor())
+                .build();
+    }
+
+    @Bean
+    public ChatClient openaiChatClientWithChatOption(OpenAiChatModel openAiChatModel){
+        System.out.println("Creating OpenAI client with maxCompletionTokens=20");
+
+        OpenAiChatOptions.Builder openAiChatOption = OpenAiChatOptions.builder().temperature(0.1).maxCompletionTokens(2);
+        return ChatClient.builder(openAiChatModel)
+                .defaultOptions(openAiChatOption)
                 .defaultAdvisors(new SimpleLoggerAdvisor())
                 .build();
     }
