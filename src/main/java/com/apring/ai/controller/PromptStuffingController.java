@@ -25,7 +25,7 @@ public class PromptStuffingController {
     public String chatopenAi(@RequestParam("msg") String msg) {
         return chatClient
                 .prompt()
-                .system(prompt)
+                .system(prompt)  // prompt static that's why didn't used promptSpec
                 .user(msg)
                 .call()
                 .content();
