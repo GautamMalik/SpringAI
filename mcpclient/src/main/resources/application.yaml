@@ -1,0 +1,22 @@
+spring:
+  application:
+    name: mcpclient
+  ai:
+    chat:
+      client:
+        enabled: false
+    ollama:
+      chat:
+        options:
+          model: llama3.2:1b
+    mcp:
+      client:
+        stdio:
+          servers-configuration: classpath:mcp-servers.json
+
+logging:
+  level:
+    org.springframework.ai: DEBUG
+    org.springframework.ai.ollama: TRACE
+    org.springframework.ai.chat.client.advisor: DEBUG
+
