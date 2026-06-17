@@ -11,8 +11,13 @@ spring:
           model: llama3.2:1b
     mcp:
       client:
-        stdio:
-          servers-configuration: classpath:mcp-servers.json
+        streamable-http:
+          connections:
+            eazybytes:
+              url: http://localhost:8081
+              endpoint: /mcp
+
+# tools not getting exposed
 
 logging:
   level:

@@ -21,13 +21,6 @@
       "env": {
         "GITHUB_PERSONAL_ACCESS_TOKEN": "${input:github_token}"
       }
-    },
-    "spring-ai-mdp": {
-      "command": "C:\\Program Files\\Common Files\\Oracle\\Java\\javapath\\java.exe",
-      "args": [
-        "-jar",
-        "C:\\STUDY\\SpringAI\\SpringAI\\mcpServerSTDIO\\target\\mcpServerSTDIO-0.0.1-SNAPSHOT.jar"
-      ]
     }
   }
 }
