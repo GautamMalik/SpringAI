@@ -1,0 +1,33 @@
+{
+  "mcpServers": {
+    "filesystem": {
+      "command": "C:\\Program Files\\nodejs\\npx.cmd",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-filesystem",
+        "C:\\STUDY\\SpringAI\\SpringAI\\mcpclient\\mcpFiles"
+      ]
+    },
+    "github": {
+      "command": "docker",
+      "args": [
+        "run",
+        "-i",
+        "--rm",
+        "-e",
+        "GITHUB_PERSONAL_ACCESS_TOKEN",
+        "ghcr.io/github/github-mcp-server"
+      ],
+      "env": {
+        "GITHUB_PERSONAL_ACCESS_TOKEN": "${input:github_token}"
+      }
+    },
+    "gautam-local-tools": {
+      "command": "C:\\Program Files\\Common Files\\Oracle\\Java\\javapath\\java.exe",
+      "args": [
+        "-jar",
+        "C:\\STUDY\\SpringAI\\SpringAI\\mcpServerSTDIO\\target\\mcpServerSTDIO-0.0.1-SNAPSHOT.jar"
+      ]
+    }
+  }
+}
